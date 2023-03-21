@@ -3,28 +3,43 @@
 #include<iterator>
 using namespace std;
 
+//class Solution {
+//public:
+//    static int removeElement(vector<int>& nums, int val) 
+//    {
+//        vector<int>::iterator it; 
+//        it = nums.begin();
+//        
+//        for (int i = 0; i < nums.size(); i++)
+//        {
+//            if (nums[i] == val)
+//            {
+//                nums.erase(it);
+//                it--;
+//                i--;
+//            }
+//            it++;
+//        }
+//     
+//        return nums.size();
+//    }
+//};
+
+
 class Solution {
 public:
-    static int removeElement(vector<int>& nums, int val) 
+    static int removeElement(vector<int>& nums, int val)
     {
-        vector<int>::iterator it; 
-        it = nums.begin();
-        
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if (nums[i] == val)
-            {
-                nums.erase(it);
-                it--;
-                i--;
+        int i = 0;
+        for (int j = 0; j < nums.size(); j++) {
+            if (nums[j] != val) {
+                nums[i] = nums[j];
+                i++;
             }
-            it++;
         }
-     
-        return nums.size();
+        return i;
     }
 };
-
 
 int main()
 {
